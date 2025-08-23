@@ -11,10 +11,11 @@ await esbuild.build({
     target: "esnext",
     entryPoints: src,
     platform: "node",
-    format: "esm",
+    format: "cjs",
     bundle: true,
     outbase: "src",
     outdir: outDirectory,
+    outExtension: { ".js": ".cjs" },
     sourcemap: "inline"
     // treeShaking: true // true if bundle or format is iife
 })
