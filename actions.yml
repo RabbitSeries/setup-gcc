@@ -1,0 +1,11 @@
+name: Setup GCC
+description: Setup GCC
+inputs:
+  version:
+    description: GCC version to install (Linux only for apt)
+    required: false
+    default: "13"
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
