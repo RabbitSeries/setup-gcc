@@ -7,7 +7,7 @@
     "build:config": "esbuild ./esbuild.ts --outfile=./dist/esbuild.js --bundle --external:esbuild --external:fast-glob --format=esm --platform=node --target=esnext",
     "build:build": "node ./dist/esbuild.js",
     "build": "run-s build:config build:build",
-    "test": "npm run build && node index.js"
+    "test": "npm run build && node ./dist/index.cjs"
   },
   "type": "module",
   "dependencies": {
