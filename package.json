@@ -2,14 +2,14 @@
   "name": "setup-gcc",
   "version": "1.0.0",
   "description": "github actions for gcc setup",
-  "main": "dist/index.cjs",
+  "main": "dist/index.js",
   "scripts": {
-    "build:config": "esbuild ./esbuild.ts --outfile=./dist/esbuild.js --bundle --external:esbuild --external:fast-glob --format=esm --platform=node --target=esnext",
+    "build:config": "esbuild ./esbuild.ts --outfile=./dist/esbuild.js --bundle --external:esbuild --external:fast-glob --format=cjs --platform=node --target=esnext",
     "build:build": "node ./dist/esbuild.js",
     "build": "run-s build:config build:build",
-    "test": "npm run build && node ./dist/index.cjs"
+    "test": "npm run build && node ./dist/index.js"
   },
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
     "@actions/core": "1.11.1",
     "@actions/exec": "1.1.1",
